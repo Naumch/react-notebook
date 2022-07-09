@@ -73,7 +73,7 @@ function Inputs({ editId, setEditId, notes, setNotes }) {
         className='button-save' 
         onClick={saveItem}
       >
-        Сохранить
+        Добавить
       </button>
     </>
   )

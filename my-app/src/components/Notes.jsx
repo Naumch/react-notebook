@@ -10,11 +10,11 @@ function Notes({ notes, setNotes, filter, setEditId }) {
     return (
       <li className='list-item' key={note.id}>
         <div>
-          <h3>{note.title}</h3>
-          <p>{note.text}</p>
-          <button onClick={() => setEditId(note.id)}>Редактировать запись</button>
+          <h3 className="title">{note.title}</h3>
+          <p className="text">{note.text}</p>
         </div>
-        <button className="button-delete" onClick={() => remItem(note.id)}>✕</button>
+        <button className="button-edit" onClick={() => setEditId(note.id)}>Редактировать...</button>
+        <button className="button-delete" onClick={() => remItem(note.id)}>Удалить</button>
       </li>
     )
   });

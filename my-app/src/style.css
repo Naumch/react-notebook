@@ -1,9 +1,13 @@
-.wrap {
-  max-width: 1200px;
-  margin: 100px auto 0;
+* {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-@media (max-width: 426px) {
+.wrap {
+  max-width: 1200px;
+  margin: 50px auto 0;
+}
+
+@media (max-width: 500px) {
   .wrap {
     margin-top: 25px;
   }
@@ -12,7 +16,7 @@
 .notebook {
   display: flex;
   justify-content: space-evenly;
-  padding: 20px;
+  padding: 40px 20px;
   border: 1px solid #EDEEED;
   box-shadow: 0 0 0 5px rgba(0,0,0,0.03);
   margin: 20px;
@@ -21,6 +25,7 @@
 @media (max-width: 620px) {
   .notebook {
     flex-direction: column-reverse;
+    padding: 20px;
   }
 }
 
@@ -31,35 +36,50 @@
   flex-direction: column;
 }
 
+@media (max-width: 1000px) {
+  .item {
+    width: 45%;
+  }
+}
+
 @media (max-width: 620px) {
   .item {
     width: 100%;
+    margin-bottom: 10px;
   }
 }
 
 .list {
   list-style-type: none;
   padding-left: 0;
-  cursor: pointer;
   width: 100%;
 }
 
 .list-item {
-  display: flex;
-  justify-content: space-between;
   border-bottom: 1px solid #bdbdbd;
   margin-bottom: 1rem;
 }
 
-.button-delete {
-  cursor: pointer;
-  background: none;
-  border: none;
-  transition-duration: 1s;
+.title {
+  margin: 0;
 }
 
-.button-delete:hover {
-  transform: scale(1.5);
+.text {
+  text-align: justify;
+}
+
+.button-edit, .button-delete {
+	border: none;
+  background-color: transparent;
+	cursor: pointer;
+  transition-duration: 0.5s;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  padding: 0;
+}
+
+.button-edit:hover, .button-delete:hover {
+  opacity: 0.8;
 }
 
 .field {
@@ -110,6 +130,6 @@
 }
 
 .button-save:hover {
-	opacity: 0.88;
+	opacity: 0.8;
 }
 
