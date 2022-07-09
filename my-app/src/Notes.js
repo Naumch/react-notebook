@@ -16,13 +16,11 @@ function Notes({ notes, setNotes, filteredNotes, setEditId }) {
     setNotes(notes.filter(note => note.id !== id));
   }
 
-  return <div className='notebook'>
-    <div className='item'>
-      <ul className='list'>
-        {items}
-      </ul>
-    </div>
-  </div>
+  return (
+    <ul className='list'>
+      {items}
+    </ul>
+  )  
 }
 
 export default Notes;

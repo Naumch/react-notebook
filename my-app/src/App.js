@@ -16,12 +16,14 @@ function App() {
 
   return (
     <div className='wrap'>
-      <div className='item'>
-        <Filter filter={filter} setFilter={setFilter}/>
-        <Notes notes={notes} setNotes={setNotes} filteredNotes={filteredNotes} setEditId={setEditId}/>
-      </div>
-      <div className='item'>
-        <Inputs editId={editId} setEditId={setEditId} notes={notes} setNotes={setNotes}/>
+      <div className='notebook'>
+        <div className='item'>
+          <Filter filter={filter} setFilter={setFilter}/>
+          <Notes notes={notes} setNotes={setNotes} filteredNotes={filteredNotes} setEditId={setEditId}/>
+        </div>
+        <div className='item'>
+          <Inputs editId={editId} setEditId={setEditId} notes={notes} setNotes={setNotes}/>
+        </div>
       </div>
     </div>
   )
