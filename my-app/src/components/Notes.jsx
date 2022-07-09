@@ -8,18 +8,13 @@ function Notes({ notes, setNotes, filter, setEditId }) {
 
   const items = filteredNotes.map(note => {
     return (
-      <li 
-        className='list-item' 
-        key={note.id} 
-        onClick={() => setEditId(note.id)}
-      >
-        {note.title}
-        <button 
-          className="button-delete" 
-          onClick={() => remItem(note.id)}
-        >
-          ✕
-        </button>
+      <li className='list-item' key={note.id}>
+        <div>
+          <h3>{note.title}</h3>
+          <p>{note.text}</p>
+          <button onClick={() => setEditId(note.id)}>Редактировать запись</button>
+        </div>
+        <button className="button-delete" onClick={() => remItem(note.id)}>✕</button>
       </li>
     )
   });
