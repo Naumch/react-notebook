@@ -1,5 +1,10 @@
+import React from "react";
 
-function Notes({ notes, setNotes, filteredNotes, setEditId }) {
+function Notes({ notes, setNotes, filter, setEditId }) {
+
+  const filteredNotes = notes.filter(note => {
+    return note.title.toLowerCase().includes(filter.toLowerCase());
+  });
 
   const items = filteredNotes.map(note => {
     return (
