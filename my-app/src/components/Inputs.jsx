@@ -42,14 +42,39 @@ function Inputs({ editId, setEditId, notes, setNotes }) {
   return (
     <>
       <div className='field'>
-        <label className='field__label' htmlFor='title'>Название:</label>
-        <input className='field__input' name='title' value={getValue('title')} onChange={event => changeItem('title', event)} />
+        <label 
+          className='field__label' 
+          htmlFor='title'
+        >
+          Название заметки:
+        </label>
+        <input 
+          className='field__input' 
+          name='title' 
+          value={getValue('title')} 
+          onChange={event => changeItem('title', event)} 
+        />
       </div>
       <div className='field'>
-        <label className='field__label' htmlFor='text'>Текст:</label>
-        <textarea className='field__textarea' name='text' value={getValue('text')} onChange={event => changeItem('text', event)} />
+        <label 
+          className='field__label' 
+          htmlFor='text'
+        >
+          Текст:
+        </label>
+        <textarea 
+          className='field__textarea' 
+          name='text' 
+          value={getValue('text')} 
+          onChange={event => changeItem('text', event)} 
+        />
       </div>
-      <button className='button-save' onClick={saveItem}>Сохранить</button>
+      <button 
+        className='button-save' 
+        onClick={saveItem}
+      >
+        Сохранить
+      </button>
     </>
   )
 }
