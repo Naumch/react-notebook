@@ -2,8 +2,6 @@ import { useState } from 'react';
 import uniqid from 'uniqid';
 import Note from './Note';
 
-const initNotes = [];
-
 function getInitObj() {
   return {
     id: uniqid(),
@@ -12,15 +10,9 @@ function getInitObj() {
   }
 }
 
-function Notes() {
-  const [notes, setNotes] = useState(initNotes);
+function Notes({ notes, setNotes, filteredNotes }) {
   const [obj, setObj] = useState(getInitObj());
   const [editId, setEditId] = useState(null);
-  const [value, setValue] = useState('');
-
-  const filteredNotes = notes.filter(note => {
-    return note.title.toLowerCase().includes(value.toLowerCase());
-  });
 
   const items = filteredNotes.map(note => {
     return <Note 
@@ -65,10 +57,6 @@ function Notes() {
 
   return <div className='notebook'>
     <div className='item'>
-      <div className='field'>
-        <label className='field__label' htmlFor='search'>Поиск:</label>
-        <input className='field__input' name='search' value={value} onChange={event => setValue(event.target.value)} />
-      </div>
       <ul className='list'>
         {items}
       </ul>
